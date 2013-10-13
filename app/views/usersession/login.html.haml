@@ -1,0 +1,12 @@
+= form_for :user, :url => url_for(:controller => 'usersession', :action => 'create'), :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :email, :class => 'control-label'
+    .controls
+      = f.text_field :email, :class => 'text_field'
+  .control-group
+    = f.label :password, :class => 'control-label'
+    .controls
+      = f.password_field :password, :class => 'text_field'
+  .form-actions
+    = f.submit "Login", :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), resources_path, :class => 'btn'
