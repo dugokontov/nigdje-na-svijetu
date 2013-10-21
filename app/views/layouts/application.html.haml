@@ -4,7 +4,7 @@
     %meta(charset="utf-8")
     %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %title= content_for?(:title) ? yield(:title) : "NigdjeNaSvijetu"
+    %title= content_for?(:title) ? yield(:title) : "Nigdje na svijetu"
     = csrf_meta_tags
     / Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
@@ -19,35 +19,30 @@
 
 
   %body
-    - if can? :manage, :respurce
-      .navbar.navbar-fixed-top
-        .navbar-inner
-          .container
-            %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
-              %span.icon-bar
-              %span.icon-bar
-              %span.icon-bar
-            %a.brand{:href => "#{root_path}"} Nigdje na svijetu
-            .container.nav-collapse
-              %ul.nav
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand{:href => "#{root_path}"} Nigdje na svijetu
+          .container.nav-collapse
+            %ul.nav
+              %li= link_to "Komentari", quotes_path
+              - if can? :manage, :respurce
                 %li= link_to "Napravi novi resurs", new_resource_path
+                %li= link_to "Statusi", statuses_path
                 %li= link_to "Logout", logout_path
 
     .container
 
       .row
-        .span2
-        .span9
+        .span12
           = bootstrap_flash
-          = yield
-        / .span3
-        /   .well.sidebar-nav
-        /     %h3 Sidebar
-        /     %ul.nav.nav-list
-        /       %li.nav-header Sidebar
-        /       %li= link_to "Link 1", "/path1"
-        /       %li= link_to "Link 2", "/path2"
-        /       %li= link_to "Link 3", "/path3"
-    
-      / %footer
-      /   %p &copy; Company 2013
+          = yield    
+      %footer
+        %p
+          Vaš komentar je dobrodošao:
+          %a{:href => "mailto:nigdjenasvijetu@nesto.com"} nigdjenasvijetu@nesto.com
+        %p &copy; B&ampJ 2013

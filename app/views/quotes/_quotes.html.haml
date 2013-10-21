@@ -1,0 +1,16 @@
+- quotes = Array(quotes)
+%h3 Zanimljive izjave i potezi političara
+- quotes.each do |quote|
+  .well.quote
+    - if can? :manage, :quote
+      .pull-right
+        = link_to t('.edit', :default => t("helpers.links.edit")), edit_quote_path(quote), :class => 'btn btn-mini'
+        = link_to t('.destroy', :default => t("helpers.links.destroy")), quote_path(quote), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+    %p.statement=quote.statement
+    %p.person
+      %strong=quote.said_by
+      - if quote.commented_on
+        %span &ndash;
+        %span=quote.commented_on.to_time.strftime("%d.%m.%Y.") + "god."
+      - if quote.comment_on
+        %span=quote.comment_on

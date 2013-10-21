@@ -1,0 +1,7 @@
+- model_class = Quote
+.row
+  .span12
+    = render :partial => 'quotes', :locals => {:quotes => @quotes}
+
+- if can? :manage, :quote
+  = link_to t('.new', :default => t("helpers.links.new")), new_quote_path, :class => 'btn btn-primary'

@@ -5,6 +5,7 @@ class ResourcesController < ApplicationController
   # GET /resources
   def index
     @resources.includes(:status)
+    @quote = Quote.first
   end
 
   # GET /resources/new

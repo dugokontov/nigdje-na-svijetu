@@ -6,6 +6,7 @@ class Ability
       can :manage, :all
     else
       can :read, Resource
+      can :read, Quote
     end
   end
 end

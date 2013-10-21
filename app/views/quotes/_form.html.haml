@@ -1,0 +1,23 @@
+= form_for @quote, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :statement, :class => 'control-label'
+    .controls
+      = f.text_area :statement, :class => 'text_area'
+  .control-group
+    = f.label :said_by, :class => 'control-label'
+    .controls
+      = f.text_field :said_by, :class => 'text_field'
+  .control-group
+    = f.label :comment_on, :class => 'control-label'
+    .controls
+      = f.text_field :comment_on, :class => 'text_field'
+  .control-group
+    = f.label :commented_on, :class => 'control-label'
+    .controls
+      .input-append.date
+        = f.text_field :commented_on, :class => 'text_field'
+        %span.add-on
+          %i.icon-th
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), quotes_path, :class => 'btn'
