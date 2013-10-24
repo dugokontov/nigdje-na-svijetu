@@ -4,7 +4,7 @@
     Kanton Sarajevo 
     %small="Osnovne životne potrebe"
 .row
-  .span9
+  .span8
     #resource-status.hero-unit
       - @resources.each do |resource|
         .well
@@ -14,7 +14,7 @@
             - if can? :manage, :resource
               = link_to t('.edit', :default => t("helpers.links.edit")), edit_resource_path(resource), :class => 'btn btn-mini'
               = link_to t('.destroy', :default => t("helpers.links.destroy")), resource_path(resource), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
-  .span3
+  .span4
     #status
       - Status.all.each do |status|
         .well.well-small
