@@ -21,3 +21,13 @@
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), quotes_path, :class => 'btn'
+:coffeescript
+  $ ->
+    console.log new Date, $('.input-append.date').length
+    $('.input-append.date').datepicker
+      format: "yyyy-mm-dd"
+      todayBtn: "linked"
+      language: "rs-latin"
+      orientation: "top auto"
+      autoclose: true
+      todayHighlight: true

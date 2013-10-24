@@ -27,6 +27,4 @@
       Morbi suscipit accumsan velit, sed vulputate elit lobortis in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In tincidunt porttitor dui quis varius.
 .row
   .span12
-    = render :partial => "quotes/quotes", :locals => {:quotes => @quote}
-    %p
-      = link_to "Pročitaj više...", quotes_path
+    = render :partial => "quotes/quotes", :locals => {:quotes => @quote, :read_more => true}

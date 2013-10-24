@@ -14,3 +14,5 @@
         %span=quote.commented_on.to_time.strftime("%d.%m.%Y.") + "god."
       - if quote.comment_on
         %span=quote.comment_on
+    - if defined?(read_more) && read_more
+      = link_to "Pročitaj više...", quotes_path
