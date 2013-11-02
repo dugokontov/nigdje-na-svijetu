@@ -6,6 +6,7 @@ class ResourcesController < ApplicationController
   def index
     @resources.includes(:status)
     @quote = Quote.first
+    @page_content = Content.get_page_content
   end
 
   # GET /resources/new
@@ -18,7 +19,6 @@ class ResourcesController < ApplicationController
 
   # POST /resources
   def create
-
     respond_to do |format|
       if @resource.save
         format.html { redirect_to resources_url, notice: 'Resource was successfully created.' }

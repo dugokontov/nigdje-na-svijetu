@@ -21,10 +21,8 @@
           = status.name
           .pull-right
             = render :partial => "shared/status", :locals => {:status => status}
-    %p
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet ante libero. Vestibulum adipiscing tincidunt tellus tempus facilisis. 
-    %p
-      Morbi suscipit accumsan velit, sed vulputate elit lobortis in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In tincidunt porttitor dui quis varius.
+    %p=@page_content[:project_description]
+    %p=@page_content[:info_text]
 .row
   .span12
     = render :partial => "quotes/quotes", :locals => {:quotes => @quote, :read_more => true}

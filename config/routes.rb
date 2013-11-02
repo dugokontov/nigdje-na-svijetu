@@ -1,4 +1,6 @@
 NigdjeNaSvijetu::Application.routes.draw do
+  resources :contents
+
   resources :quotes
 
   resources :statuses
